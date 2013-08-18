@@ -4,12 +4,16 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.cc.alarm.AlarmReceiver;
 
 public class WelcomeActivity extends Activity {
 	private ImageView imageView1;
@@ -27,7 +31,15 @@ public class WelcomeActivity extends Activity {
 		initView();
 		initAnimal();
 		StartTimer();
-
+		initAlarm();
+	}
+	
+	//todo
+	private void initAlarm(){
+	  AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+    Intent intent = new Intent(this,AlarmReceiver.class);
+    PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
+    alarmManager.setRepeating(AlarmManager.RTC, 0, 60*1000, pendingIntent);
 	}
 
 	private void initAnimal() {
