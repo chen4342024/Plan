@@ -18,5 +18,6 @@ public class TestActivity extends Activity {
 		TextView t1 = (TextView) findViewById(R.id.test1);
 		List<DailyPlan> dailyPlans = DailyPlanDao.readAll(this, null, null, null, null);
 		t1.setText("123123");
+		System.out.println("测试");
 	}
 }
