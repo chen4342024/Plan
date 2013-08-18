@@ -19,5 +19,6 @@ public class TestActivity extends Activity {
 		List<DailyPlan> dailyPlans = DailyPlanDao.readAll(this, null, null, null, null);
 		t1.setText("123123");
 		System.out.println("测试");
+		System.out.println("测试");
 	}
 }
