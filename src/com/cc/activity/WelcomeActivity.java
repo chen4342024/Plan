@@ -31,7 +31,7 @@ public class WelcomeActivity extends Activity {
 		initView();
 		initAnimal();
 		StartTimer();
-		initAlarm();
+		//initAlarm();
 	}
 	
 	//todo

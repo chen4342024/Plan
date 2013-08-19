@@ -1,10 +1,7 @@
 package com.cc.activity;
-
 import java.util.List;
-
 import com.cc.db.DailyPlan;
 import com.cc.db.DailyPlanDao;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -18,7 +15,7 @@ public class TestActivity extends Activity {
 		TextView t1 = (TextView) findViewById(R.id.test1);
 		List<DailyPlan> dailyPlans = DailyPlanDao.readAll(this, null, null, null, null);
 		t1.setText("123123");
-		System.out.println("测试");
-		System.out.println("测试");
+	
+	
 	}
 }
