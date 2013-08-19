@@ -26,15 +26,12 @@ public class TestActivity extends Activity {
 //		TextView t1 = (TextView) findViewById(R.id.test1);
 //		List<DailyPlan> dailyPlans = DailyPlanDao.readAll(this, null, null, null, null);
 //		t1.setText("123123");
-		System.out.println("测试");
-		System.out.println("测试");
 //		myImageText = (MyImageText) findViewById(R.id.image_text);
 //		myImageText.setImageResource(R.drawable.cloud);
-//		myImageText.setTextViewText("这个只是测试而已。。不要当�);
-		t2 = new TextView(this);
-		t2.setText("测试测试测试测试");
-		t2.setBackgroundResource(R.drawable.cloud);
-		View view = this.getLayoutInflater().inflate(R.layout.activity_test,null);
+//		myImageText.setTextViewText("这个只是测试而已。。不要当�);
+//		t2 = new TextView(this);
+//		t2.setText("测试测试测试测试");
+//		t2.setBackgroundResource(R.drawable.cloud);
 		
 		layout=(LinearLayout)findViewById(R.id.layout);
 		button=(Button)findViewById(R.id.button);

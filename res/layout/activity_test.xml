@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -14,7 +13,7 @@
     </LinearLayout>
     <Button 
         android:id="@+id/button"
-        android:text="发�
+        android:text="测试"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         />
