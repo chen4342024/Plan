@@ -59,11 +59,11 @@ public class MainActivity extends TabActivity implements OnClickListener {
 		mTabhost = getTabHost();
 
 		TabSpec ts1 = mTabhost.newTabSpec(TAB_CALL).setIndicator(TAB_CALL);
-		ts1.setContent(new Intent(this, PlanActivity.class));
+		ts1.setContent(new Intent(this, FirstActivity.class));
 		mTabhost.addTab(ts1);
 
 		TabSpec ts2 = mTabhost.newTabSpec(TAB_ALARM).setIndicator(TAB_ALARM);
-		ts2.setContent(new Intent(this, TestActivity.class));
+		ts2.setContent(new Intent(this, PlanActivity.class));
 		mTabhost.addTab(ts2);
 
 		TabSpec ts3 = mTabhost.newTabSpec(TAB_STHOME).setIndicator(TAB_STHOME);
