@@ -1,16 +1,22 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical" >
 
-<TextView 
-    android:id="@+id/test1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:text="这是一个测试界面"
-    android:textColor="#ff00ff"
-    />
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp" 
+        android:orientation="vertical"
+        >
+    </LinearLayout>
+    <Button 
+        android:id="@+id/button"
+        android:text="发送"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        />
 
-</RelativeLayout>
+</LinearLayout>
