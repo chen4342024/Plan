@@ -12,5 +12,10 @@
     android:text="这是一个测试界面"
     android:textColor="#ff00ff"
     />
+ <com.cc.view.MyImageText
+                android:id="@+id/image_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
 </RelativeLayout>

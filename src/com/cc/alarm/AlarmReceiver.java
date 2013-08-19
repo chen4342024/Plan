@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.util.Log;
 
 public class AlarmReceiver extends BroadcastReceiver {
-  private boolean isOpen = true;
+  private boolean isOpen = false;
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		

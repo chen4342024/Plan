@@ -22,6 +22,7 @@ public class DailyPlanDao {
       DailyPlan dailyPlan = new DailyPlan();
       dailyPlanList.add(cursorToDailyPlan(cursor,dailyPlan));
     }
+    db.close();
     return dailyPlanList;
   }
   private static DailyPlan cursorToDailyPlan(Cursor cursor,DailyPlan dailyPlan){
