@@ -9,11 +9,14 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cc.alarm.AlarmReceiver;
+import com.clj.service.PlanService;
 
 public class WelcomeActivity extends Activity {
 	private ImageView imageView1;
@@ -30,16 +33,30 @@ public class WelcomeActivity extends Activity {
 		setContentView(R.layout.activity_welcome);
 		initView();
 		initAnimal();
-		StartTimer();
-		//initAlarm();
+
+		// initAlarm();
+		if (PlanService.isExist()) {
+			Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
+			startActivity(intent);
+			finish();
+		} else {
+
+			Intent intent_service = new Intent(WelcomeActivity.this,
+					PlanService.class);
+			startService(intent_service);
+			StartTimer();
+		}
+
 	}
-	
-	//todo
-	private void initAlarm(){
-	  AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
-    Intent intent = new Intent(this,AlarmReceiver.class);
-    PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-    alarmManager.setRepeating(AlarmManager.RTC, 0, 60*1000, pendingIntent);
+
+	// todo
+	private void initAlarm() {
+		AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+		Intent intent = new Intent(this, AlarmReceiver.class);
+		PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0,
+				intent, 0);
+		alarmManager
+				.setRepeating(AlarmManager.RTC, 0, 60 * 1000, pendingIntent);
 	}
 
 	private void initAnimal() {
@@ -77,7 +94,7 @@ public class WelcomeActivity extends Activity {
 				}
 			};
 		}
-		timer.schedule(task, 4 * 1000, 5000);
+		timer.schedule(task, 3 * 1000, 5000);
 	}
 
 	private void StopTimer() {
@@ -90,6 +107,31 @@ public class WelcomeActivity extends Activity {
 			task.cancel();
 			task = null;
 		}
+
+	}
+
+	// 按返回键的回调方法
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		// TODO Auto-generated method stub\
+		int k_code;
+		int k_action;
+		k_code = event.getKeyCode();
+		k_action = event.getAction();
+		if ((k_code == KeyEvent.KEYCODE_BACK && k_action == KeyEvent.ACTION_DOWN)
+				&& event.getRepeatCount() == 0) {
+			StopTimer();
+			stopService();
+			finish();
+			
+			return true;
+		}
+
+		return super.dispatchKeyEvent(event);
+	}
+	private void stopService()
+	{
+		Intent intent_service=new Intent(WelcomeActivity.this,PlanService.class);
+		stopService(intent_service);
 	}
 
 }
