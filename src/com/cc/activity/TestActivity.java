@@ -28,7 +28,7 @@ public class TestActivity extends Activity {
 		button.setOnClickListener(new OnClickListener() {
 			
 			@Override
-			public void onClick(View view) {
+			public void onClick(View view) {  
 				TextView textView=new TextView(TestActivity.this);
 				textView.setBackgroundResource(R.drawable.navigationbar);
 				textView.setText("这是佳佳加加++++");
