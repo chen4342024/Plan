@@ -30,7 +30,7 @@ public class TestActivity extends Activity {
 			@Override
 			public void onClick(View view) {  
 				TextView textView=new TextView(TestActivity.this);
-				textView.setBackgroundResource(R.drawable.navigationbar);
+				textView.setBackgroundResource(R.drawable.navigationbar); 
 				textView.setText("这是佳佳加加++++");
 				textView.setGravity(Gravity.CENTER);
 				layout.addView(textView);
