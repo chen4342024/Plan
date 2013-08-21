@@ -26,6 +26,7 @@
         </activity>
         <activity android:name="com.cc.activity.PlanActivity" >
         </activity>
+        <activity android:name=".SetActivity"></activity>
         <activity android:name="com.cc.activity.TestActivity" >
         </activity>
         <activity android:name="com.cc.alarm.showSchedule"

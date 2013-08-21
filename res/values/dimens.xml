@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+
     <dimen name="littleitem_font">10sp</dimen>
     <dimen name="navigation_height">40dp</dimen>
     <dimen name="welcome_height">100dp</dimen>
+    <dimen name="text_width">8dp</dimen>
+    <dimen name="text_height">50px</dimen>
+
 </resources>

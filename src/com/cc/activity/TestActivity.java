@@ -31,7 +31,7 @@ public class TestActivity extends Activity {
 //		t1.setText("123123");
 //		myImageText = (MyImageText) findViewById(R.id.image_text);
 //		myImageText.setImageResource(R.drawable.cloud);
-//		myImageText.setTextViewText("这个只是测试而已。。不要当�);
+//		myImageText.setTextViewText("这个只是测试而已。。不要当�;
 //		t2 = new TextView(this);
 //		t2.setText("测试测试测试测试");
 //		t2.setBackgroundResource(R.drawable.cloud);
@@ -44,7 +44,7 @@ public class TestActivity extends Activity {
 			public void onClick(View view) {  
 				TextView textView=new TextView(TestActivity.this);
 				textView.setBackgroundResource(R.drawable.wallpaper_x2);
-				textView.setText("今天是个好日子,今天是个好日子,今天是个好日子今天是今天是个好日子今天是个好日。今天是个好日子。今天是个好日子"+i+i+i);
+				textView.setText("今天是个好日�今天是个好日�今天是个好日子今天是今天是个好日子今天是个好日。今天是个好日子。今天是个好日子"+i+i+i);
 				i++;
 				textView.setHeight(200);
 				textView.setWidth(80);
