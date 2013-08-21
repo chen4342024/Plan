@@ -4,14 +4,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/wall"
     android:orientation="vertical" >
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/layout"
         android:layout_width="wrap_content"
         android:layout_weight="1"
         android:layout_height="0dp" 
         android:orientation="vertical"
         >
-    </FrameLayout>
+    </RelativeLayout>
     <LinearLayout
         android:id="@+id/layout2"
         android:layout_width="match_parent"
