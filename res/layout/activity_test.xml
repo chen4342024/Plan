@@ -2,25 +2,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wall"
     android:orientation="vertical" >
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_weight="1"
         android:layout_height="0dp" 
         android:orientation="vertical"
         >
-    </LinearLayout>
-    <Button 
-        android:id="@+id/button"
-        android:text="测试"
-        android:layout_width="match_parent" 
-        android:layout_height="50dp"
-        />
- <com.cc.view.MyImageText
-                android:id="@+id/image_text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:orientation="vertical"
+        >
+	    <Button 
+	        android:id="@+id/button"
+	        android:text="测试"
+	        android:layout_width="match_parent" 
+	        android:layout_height="50dp"
+	        />
+	 	<com.cc.view.MyImageText
+	                android:id="@+id/image_text"
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                />
+ 	</LinearLayout>
 </LinearLayout>
