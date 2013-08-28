@@ -24,10 +24,6 @@
 	        android:layout_width="match_parent" 
 	        android:layout_height="50dp"
 	        />
-	 	<com.cc.view.MyImageText
-	                android:id="@+id/image_text"
-	                android:layout_width="match_parent"
-	                android:layout_height="match_parent"
-	                />
+	 
  	</LinearLayout>
 </LinearLayout>

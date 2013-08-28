@@ -26,6 +26,8 @@
         </activity>
         <activity android:name="com.cc.activity.PlanActivity" >
         </activity>
+          <activity android:name="com.cc.activity.AddDailyPlanAcitvity" >
+        </activity>
         <activity android:name=".SetActivity"></activity>
         <activity android:name="com.cc.activity.TestActivity" >
         </activity>
