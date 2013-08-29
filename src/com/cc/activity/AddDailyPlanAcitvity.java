@@ -26,12 +26,16 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
+import com.cc.db.DailyPlan;
 import com.cc.db.DailyPlanDao;
+import com.cc.util.DateService;
 import com.cc.util.SysUtil;
 import com.cc.view.CustomerViewpager;
 import com.cc.view.MyWallPaper;
 import com.cc.view.WordLimitEdittext;
+import com.clj.service.PlanService;
 
 public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
   private static int FACE_NUM_EACH_PAGE = 36;
@@ -98,13 +102,40 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
    * 发送计划
    */
   private void submitPlan() {
-    DailyPlanDao.readAll(context, null, null, null);
+    if (planContent.getEditText().getText().length() == 0) {
+      Toast.makeText(context, "请输入内容", Toast.LENGTH_SHORT).show();
+      return;
+    }
+    int maxPlanCount = Integer.parseInt(PlanService.instance().ReadVal("plan_count", "5").substring(0, 1));
+//    if (maxPlanCount) {
+//      
+//    }
     SysUtil.hideInputMethod(AddDailyPlanAcitvity.this);
+    
+    if (saveDailyPlan()) {
+      Toast.makeText(context, "保存成功", Toast.LENGTH_SHORT).show();
+      showDailyPlan();
+    }else {
+      Toast.makeText(context, "保存出错", Toast.LENGTH_SHORT).show();
+    }
+  };
+  
+  private void showDailyPlan(){
     MyWallPaper wallPaper = new MyWallPaper(context, wallLayout);
     wallPaper.setImageResource(R.drawable.wallpaper_x2);
     wallPaper.setText(planContent.getEditText().getText());// 20
     wallLayout.addView(wallPaper);
-  };
+  }
+  
+  private boolean saveDailyPlan(){
+    DailyPlan dailyPlan = new DailyPlan();
+    dailyPlan.setInitTime(DateService.getInstance().now());
+    dailyPlan.setContent(planContent.getEditText().getText().toString());
+    dailyPlan.setFinish(false);
+    return DailyPlanDao.addDailyPlan(context, dailyPlan);
+  }
+  
+  
 
   /**
    * 创建一个表情选择对话框

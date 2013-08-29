@@ -50,6 +50,11 @@ public class PlanService extends Service {
 			edit.putString(Name, val);
 		}
 	}
+	public void WriteVal(String Name, int val) {
+    synchronized (instance) {
+      edit.putInt(Name, val);
+    }
+  }
 
 	public void SaveParams() {
 		synchronized (instance) {
