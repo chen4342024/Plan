@@ -81,7 +81,7 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
         faceLayout.setVisibility(View.GONE);
         break;
       case R.id.faceButton:
-        SysUtil.hideInputMethod(AddDailyPlanAcitvity.this);
+       SysUtil.hideInputMethod(AddDailyPlanAcitvity.this);
         faceLayout.setVisibility(View.VISIBLE);
         break;
       case R.id.plan_layout:
