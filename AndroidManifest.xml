@@ -13,19 +13,20 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name=".WelcomeActivity" >
+        <activity android:name="com.cc.activity.WelcomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirstActivity"></activity>
+        <activity android:name="com.cc.activity.FirstActivity"></activity>
         <activity
             android:name="com.cc.activity.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity android:name="com.cc.activity.PlanActivity" >
+        </activity>
+          <activity android:name="com.cc.activity.AddDailyPlanAcitvity" >
         </activity>
         <activity android:name=".SetActivity"></activity>
         <activity android:name="com.cc.activity.TestActivity" >

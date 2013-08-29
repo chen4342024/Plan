@@ -2,21 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wall"
     android:orientation="vertical" >
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_weight="1"
         android:layout_height="0dp" 
         android:orientation="vertical"
         >
-    </LinearLayout>
-    <Button 
-        android:id="@+id/button"
-        android:text="发送"
-        android:layout_width="match_parent" 
-        android:layout_height="50dp"
-        />
-
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:orientation="vertical"
+        >
+	    <Button 
+	        android:id="@+id/button"
+	        android:text="测试"
+	        android:layout_width="match_parent" 
+	        android:layout_height="50dp"
+	        />
+	 
+ 	</LinearLayout>
 </LinearLayout>
