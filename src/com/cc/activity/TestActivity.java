@@ -2,11 +2,14 @@ package com.cc.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3c631705861eba503c960a1a29b17262cabd981c
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+<<<<<<< HEAD
 import android.view.View.OnTouchListener;
 
 
@@ -16,6 +19,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+=======
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+>>>>>>> 3c631705861eba503c960a1a29b17262cabd981c
 public class TestActivity extends Activity  {
 	private RelativeLayout layout;
 	private Button button;
@@ -44,14 +53,13 @@ public class TestActivity extends Activity  {
 				
 			}
 		});
-		
-		
-		
-	
-	
 	}
+<<<<<<< HEAD
 
 
 
 
 }
+=======
+}
+>>>>>>> 3c631705861eba503c960a1a29b17262cabd981c
