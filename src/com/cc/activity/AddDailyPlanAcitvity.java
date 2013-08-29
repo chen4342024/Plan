@@ -27,6 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 
+import com.cc.db.DailyPlanDao;
 import com.cc.util.SysUtil;
 import com.cc.view.CustomerViewpager;
 import com.cc.view.MyWallPaper;
@@ -97,6 +98,7 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
    * 发送计划
    */
   private void submitPlan() {
+    DailyPlanDao.readAll(context, null, null, null);
     SysUtil.hideInputMethod(AddDailyPlanAcitvity.this);
     MyWallPaper wallPaper = new MyWallPaper(context, wallLayout);
     wallPaper.setImageResource(R.drawable.wallpaper_x2);

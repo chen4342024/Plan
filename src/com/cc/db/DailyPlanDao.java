@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 public class DailyPlanDao {
   private static final String TAG = "DailyPlanDao";
 
-  public static List<DailyPlan> readAll(Context context,String selection, String[] selectionArgs, String orderBy, String limit) {
+  public static List<DailyPlan> readAll(Context context,String selection, String[] selectionArgs, String orderBy) {
     DBHelper helper = new DBHelper(context);
     SQLiteDatabase db = null;
     Cursor cursor = null;
