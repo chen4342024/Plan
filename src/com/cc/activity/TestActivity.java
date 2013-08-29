@@ -5,15 +5,19 @@ import com.cc.db.DailyPlanDao;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class TestActivity extends Activity {
+public class TestActivity extends Activity  {
 	private LinearLayout layout;
 	private Button button;
+	float x=0;
+	float y=0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -43,4 +47,5 @@ public class TestActivity extends Activity {
 	
 	
 	}
+
 }
