@@ -44,7 +44,9 @@ public class WordLimitEdittext extends FrameLayout {
 
   // 自定义计算长度方法
   private int caluEditText(Editable editable) {
+	 
     int faceCount = editable.getSpans(0, editable.length(), ImageSpan.class).length;
+    
     int number = editable.length() - faceCount * (FACE_STR_LENGTH - FACE_IMG_LENGTH);
     return number;
   }
@@ -63,7 +65,7 @@ public class WordLimitEdittext extends FrameLayout {
     private CharSequence temp;
     private int selectionStart;
     private int selectionEnd;
-
+ 
     @Override
     public void afterTextChanged(Editable editable) {
       
@@ -88,6 +90,7 @@ public class WordLimitEdittext extends FrameLayout {
     @Override
     public void beforeTextChanged(CharSequence charsequence, int start, int before, int count) {
       temp = charsequence;
+      
     }
 
     @Override
