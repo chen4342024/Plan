@@ -3,6 +3,7 @@ package com.cc.view;
 import com.cc.activity.R;
 
 import android.content.Context;
+import android.text.style.SuperscriptSpan;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -37,17 +38,24 @@ public class MyWallPaper extends TextView {
 	  this.setGravity(Gravity.CENTER);
 	  this.setBackgroundResource(R.drawable.wallpaper_x2);
 	  this.setOnTouchListener(wallPaperTouchListener);
+	  this.setOnLongClickListener(longClickListener);
 	  Log.i("parentLayout", "width"+parentLayout.getWidth());
 	  Log.i("parentLayout", "height"+parentLayout.getHeight());
 	}
 	
-	private OnTouchListener wallPaperTouchListener = new OnTouchListener() {
-
+	private OnLongClickListener longClickListener = new OnLongClickListener() {
+    
     @Override
+    public boolean onLongClick(View v) {
+      Log.e("event", "onLongClick");
+      return false;
+    }
+  };
+	private OnTouchListener wallPaperTouchListener = new OnTouchListener() {
+	  @Override
     public boolean onTouch(View v, MotionEvent event) {
       final int X = (int) event.getRawX();
       final int Y = (int) event.getRawY();
-      
       switch (event.getAction() & MotionEvent.ACTION_MASK) {
         case MotionEvent.ACTION_DOWN:
           RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams) v.getLayoutParams();

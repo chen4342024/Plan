@@ -39,7 +39,8 @@ import com.clj.service.PlanService;
 
 public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
   private static int FACE_NUM_EACH_PAGE = 36;
-
+  private int[] imageIds = new int[107];// 存放表情的数组
+  
   private RelativeLayout wallLayout;
   private LinearLayout faceLayout;
 
@@ -48,9 +49,11 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
   private ImageButton faceBtn;
 
   private Context context;
-  private int[] imageIds = new int[107];// 存放表情的数组
+ 
   private int _xDelta = 0;
   private int _yDelta = 0;
+  
+  private List<DailyPlan> dailyPlans;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +98,6 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
       default:
         break;
     }
-
   }
 
   /**
@@ -114,13 +116,13 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
     
     if (saveDailyPlan()) {
       Toast.makeText(context, "保存成功", Toast.LENGTH_SHORT).show();
-      showDailyPlan();
+      addWallPage();
     }else {
       Toast.makeText(context, "保存出错", Toast.LENGTH_SHORT).show();
     }
   };
   
-  private void showDailyPlan(){
+  private void addWallPage(){
     MyWallPaper wallPaper = new MyWallPaper(context, wallLayout);
     wallPaper.setImageResource(R.drawable.wallpaper_x2);
     wallPaper.setText(planContent.getEditText().getText());// 20

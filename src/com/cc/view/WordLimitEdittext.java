@@ -24,7 +24,6 @@ public class WordLimitEdittext extends FrameLayout {
   private int oldImageSpanNum = 0;
   public WordLimitEdittext(Context context) {
     this(context, null);
-
   }
 
   public WordLimitEdittext(Context context, AttributeSet attrs) {
