@@ -26,7 +26,9 @@
         </activity>
         <activity android:name="com.cc.activity.PlanActivity" >
         </activity>
-          <activity android:name="com.cc.activity.AddDailyPlanAcitvity" >
+          <activity android:name="com.cc.activity.AddDailyPlanAcitvity" 
+              android:windowSoftInputMode="adjustResize|stateHidden"
+              >
         </activity>
         <activity android:name=".SetActivity"></activity>
         <activity android:name="com.cc.activity.TestActivity" >

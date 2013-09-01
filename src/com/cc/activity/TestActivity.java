@@ -2,15 +2,28 @@ package com.cc.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import android.view.View.OnTouchListener;
+
+
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+
+
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
 public class TestActivity extends Activity  {
-	private LinearLayout layout;
+	private RelativeLayout layout;
 	private Button button;
 	float x=0;
 	float y=0;
@@ -23,7 +36,7 @@ public class TestActivity extends Activity  {
 //		List<DailyPlan> dailyPlans = DailyPlanDao.readAll(this, null, null, null, null);
 //		t1.setText("123123");
 		
-		layout=(LinearLayout)findViewById(R.id.layout);
+		layout=(RelativeLayout)findViewById(R.id.layout);
 		button=(Button)findViewById(R.id.button);
 		button.setOnClickListener(new OnClickListener() {
 			
@@ -37,5 +50,13 @@ public class TestActivity extends Activity  {
 				
 			}
 		});
-	}
+	
+
+
+
+
+
 }
+
+}
+

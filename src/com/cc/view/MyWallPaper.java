@@ -1,12 +1,16 @@
 package com.cc.view;
 
+import com.cc.activity.AddDailyPlanAcitvity;
 import com.cc.activity.R;
+import com.cc.util.SysUtil;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.style.SuperscriptSpan;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -58,6 +62,7 @@ public class MyWallPaper extends TextView {
       final int Y = (int) event.getRawY();
       switch (event.getAction() & MotionEvent.ACTION_MASK) {
         case MotionEvent.ACTION_DOWN:
+        
           RelativeLayout.LayoutParams lParams = (RelativeLayout.LayoutParams) v.getLayoutParams();
           _xDelta = X - lParams.leftMargin;
           _yDelta = Y - lParams.topMargin;
