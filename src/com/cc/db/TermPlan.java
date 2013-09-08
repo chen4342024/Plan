@@ -7,7 +7,7 @@ import java.util.Date;
  *
  */
 public class TermPlan {
-  private long id;
+  private int id;
   private String content;//内容 
   private Date initTime;//设置时间
   private float progress;//是否完成
@@ -21,10 +21,10 @@ public class TermPlan {
   public static final int SHORT_TERM_PLAN = 0;//短期目标
   public final static String TABLE_NAME = "term_plan";
  
-  public long getId() {
+  public int getId() {
     return id;
   }
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
   public float getProgress() {

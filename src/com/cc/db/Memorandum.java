@@ -3,7 +3,7 @@ package com.cc.db;
 import java.util.Date;
 
 public class Memorandum {
-  private long id;
+  private int id;
   private String content;//内容 
   private int importance;//重要程度
   private Date initTime;//设置时间
@@ -16,10 +16,10 @@ public class Memorandum {
   public static final String REMIND_TIME = "remindTime";
   public static final String IS_FINISH = "isFinish";
   public final static String TABLE_NAME = "memorandum";
-  public long getId() {
+  public int getId() {
     return id;
   }
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
   public String getContent() {

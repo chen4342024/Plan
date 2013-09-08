@@ -7,7 +7,7 @@ import java.util.Date;
  *
  */
 public class WeeklyPlan {
-  private long id;
+  private int id;
   private String content;//内容 
   private Date initTime;//设置时间
   private float progress;//进度
@@ -18,10 +18,10 @@ public class WeeklyPlan {
   public static final String PROGRESS = "progress";
   public final static String TABLE_NAME = "weekly_plan";
  
-  public long getId() {
+  public int getId() {
     return id;
   }
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
   public float getProgress() {

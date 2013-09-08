@@ -19,7 +19,9 @@ public class DBHelper extends SQLiteOpenHelper {
       + DailyPlan.ID + " INTEGER PRIMARY KEY,"
       + DailyPlan.INIT_TIME + " varchar(20),"
       + DailyPlan.CONTENT + " varchar(500)," 
-      + DailyPlan.IS_FINISH + " varchar(1)" 
+      + DailyPlan.IS_FINISH + " varchar(1)," 
+      + DailyPlan.X + " INTEGER,"
+      + DailyPlan.Y + " INTEGER"
       + ")";
   //周计划表
   private static final String WEEKLY_PLAN_CREATE = 
