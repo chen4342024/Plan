@@ -50,6 +50,14 @@ public class DailyPlanDao {
     return daiPlan;
   }
   
+  public static boolean deleteDailyplan(Context context,int id){
+    DBHelper helper = new DBHelper(context);
+    SQLiteDatabase db = helper.getWritableDatabase();
+    int row = db.delete(DailyPlan.TABLE_NAME, DailyPlan.ID + "=?", new String[]{id + ""});
+    db.close();
+    return row == 1;
+  }
+  
   public static void updatePagerPosition(Context context,List<DailyPlan> dailyPlans){
     DBHelper helper = new DBHelper(context);
     SQLiteDatabase db = helper.getWritableDatabase();

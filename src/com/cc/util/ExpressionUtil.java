@@ -38,6 +38,7 @@ public class ExpressionUtil {
         continue;
       }
       // 通过上面匹配得到的字符串来生成图片资源id
+      key = key.replace('/', 'f'); // 暂时的解决方案
       Field field = R.drawable.class.getDeclaredField(key);
       int resId = Integer.parseInt(field.get(null).toString()); 
       
@@ -70,6 +71,23 @@ public class ExpressionUtil {
       Log.e("dealExpression", e.getMessage());
     }
     return spannableString;
+  }
+  
+  public static SpannableString convertStrToFace(Context context,String str){
+    String zhengze = "/0[0-9]{2}|f10[0-7]";                     //正则表达式，用来判断消息内是否有表情
+    try {
+      SpannableString spannableString = ExpressionUtil.getExpressionString(context, str, zhengze);
+      return spannableString;
+    } catch (NumberFormatException e) {
+      e.printStackTrace();
+      return null;
+    } catch (SecurityException e) {
+      e.printStackTrace();
+      return null;
+    } catch (IllegalArgumentException e) {
+      e.printStackTrace();
+      return null;
+    }
   }
 
 }

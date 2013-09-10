@@ -72,7 +72,7 @@ public class MyWallPaper extends TextView {
         Log.i("event", "onLongClick");
         isLongClick = true;
         if (listener != null) {
-          listener.deleteWallPaper(getUniqueId());
+          listener.deleteWallPaper(getUniqueId(),v);
         }
       }
       return false;
@@ -162,9 +162,5 @@ public class MyWallPaper extends TextView {
   public void setUniqueId(int uniqueId) {
     this.uniqueId = uniqueId;
   }
-
- 
-  
-	
 }
 

@@ -1,7 +1,9 @@
 package com.cc.util;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -42,7 +44,7 @@ public class SysUtil {
   /**
    * 缩放图片大小
    */
-  public static Bitmap changeBitmapSize(Bitmap bitmap,int newWidth,int newHeight) {
+  public static Bitmap changeBitmapSize(Bitmap bitmap, int newWidth, int newHeight) {
     int width = bitmap.getWidth();
     int height = bitmap.getHeight();
     // 计算缩放比例
@@ -52,7 +54,9 @@ public class SysUtil {
     Matrix matrix = new Matrix();
     matrix.postScale(scaleWidth, scaleHeight);
     // 得到新的图片
-    bitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix,true);
+    bitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
     return bitmap;
   }
+
+  
 }

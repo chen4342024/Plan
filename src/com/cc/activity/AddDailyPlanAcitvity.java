@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -33,6 +35,7 @@ import android.widget.Toast;
 import com.cc.db.DailyPlan;
 import com.cc.db.DailyPlanDao;
 import com.cc.util.DateService;
+import com.cc.util.ExpressionUtil;
 import com.cc.util.SysUtil;
 import com.cc.view.CustomerViewpager;
 import com.cc.view.MyWallPaper;
@@ -162,6 +165,7 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
     SysUtil.hideInputMethod(AddDailyPlanAcitvity.this);
     DailyPlan dailyPlan = saveDailyPlan();
     if (dailyPlan.getId() != 0) {
+      this.allDailyPlans.add(dailyPlan);
       Toast.makeText(context, "保存成功", Toast.LENGTH_SHORT).show();
       addWallPage(dailyPlan);
     } else {
@@ -179,11 +183,15 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
   private void addWallPage(DailyPlan dailyPlan) {
     MyWallPaper wallPaper = new MyWallPaper(context, wallLayout);
     wallPaper.setImageResource(R.drawable.wallpaper_x2);
-    wallPaper.setText(dailyPlan.getContent());// 20
+    wallPaper.setText(ExpressionUtil.convertStrToFace(context,dailyPlan.getContent()));
     wallPaper.setUniqueId(dailyPlan.getId());
     wallPaper.setListener(wallPagerListener);
     wallPaper.setPosition(dailyPlan.getX(), dailyPlan.getY());
     wallLayout.addView(wallPaper);
+  }
+  
+  private void removeWallPage(View view){
+    wallLayout.removeView(view);
   }
 
   private DailyPlan saveDailyPlan() {
@@ -201,13 +209,31 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
     @Override
     public boolean updatePosition(int id,int x, int y) {
       DailyPlan dailyPlan = getDailyPlanById(id);
+      if (dailyPlan == null) {
+        return false;
+      }
       dailyPlan.setX(x);
       dailyPlan.setY(y);
-      return false;
+      return true;
     }
     
     @Override
-    public boolean deleteWallPaper(int id) {
+    public boolean deleteWallPaper(final int id,final View view) {
+      
+      new AlertDialog.Builder(context).setTitle("是否确定删除此计划")// 提示信息
+      .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+        public void onClick(DialogInterface dialog, int which) {
+          
+        }
+      }).setPositiveButton("确认", new DialogInterface.OnClickListener() {
+        public void onClick(DialogInterface dialog, int whichButton) {
+          if (DailyPlanDao.deleteDailyplan(context, id)) {
+            Toast.makeText(context, "删除成功", Toast.LENGTH_SHORT).show();
+            removeWallPage(view);
+            removeDailyPlanById(id);
+          }
+        }
+      }).show();
       return false;
     }
   };
@@ -289,6 +315,8 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
     }
     return listItems;
   }
+  
+  
   private DailyPlan getDailyPlanById(int id){
     for (DailyPlan dailyPlan : this.allDailyPlans) {
       if (dailyPlan.getId() == id) {
@@ -296,5 +324,12 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
       }
     }
     return null;
+  }
+  
+  private void removeDailyPlanById(int id){
+    DailyPlan dailyPlan = getDailyPlanById(id);
+    if (dailyPlan != null) {
+      this.allDailyPlans.remove(dailyPlan);
+    }
   }
 }
