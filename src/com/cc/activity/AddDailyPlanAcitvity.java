@@ -48,8 +48,8 @@ public class AddDailyPlanAcitvity extends Activity implements OnClickListener {
   private int[] imageIds = new int[107];// 存放表情的数组
   private RelativeLayout wallLayout;
   private LinearLayout faceLayout;
-
-  private Button submitPlanBtn;
+//test
+  private Button submitPlanBtn; 
   private WordLimitEdittext planContent;
   private ImageButton faceBtn;
 
