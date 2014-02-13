@@ -34,19 +34,19 @@ public class MainActivity extends TabActivity implements OnClickListener {
 
 		mplanA = (MyRadiobutton) findViewById(R.id.radio_button0);
 		mplanA.setImageResource(R.drawable.call2, R.drawable.call1);
-		mplanA.setTextViewText(getResources().getString(R.string.call));
+		mplanA.setTextViewText(getResources().getString(R.string.personal_plan));
 		mplanA.setOnClickListener(this);
 		mplanA.setCheck(1);
 
 		mplanB = (MyRadiobutton) findViewById(R.id.radio_button1);
 		mplanB.setImageResource(R.drawable.alarm2, R.drawable.alarm1);
-		mplanB.setTextViewText(getResources().getString(R.string.alarm));
+		mplanB.setTextViewText(getResources().getString(R.string.team_plan));
 		mplanB.setOnClickListener(this);
 		mplanB.setCheck(0);
 
 		mplanC = (MyRadiobutton) findViewById(R.id.radio_button2);
 		mplanC.setImageResource(R.drawable.sthome2, R.drawable.sthome1);
-		mplanC.setTextViewText(getResources().getString(R.string.sthome));
+		mplanC.setTextViewText(getResources().getString(R.string.company_plan));
 		mplanC.setOnClickListener(this);
 		mplanC.setCheck(0);
 

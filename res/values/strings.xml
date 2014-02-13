@@ -4,9 +4,9 @@
     <string name="app_name">Plan</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="call">个人计划</string>
-    <string name="alarm">团队计划</string>
-    <string name="sthome">公司计划</string>
+    <string name="personal_plan">个人计划</string>
+    <string name="team_plan">团队计划</string>
+    <string name="company_plan">公司计划</string>
     <string name="setting">设置</string>
 
 </resources>
