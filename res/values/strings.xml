@@ -7,6 +7,10 @@
     <string name="personal_plan">个人计划</string>
     <string name="team_plan">团队计划</string>
     <string name="company_plan">公司计划</string>
+    <string name="memo_str">备忘录</string>
     <string name="setting">设置</string>
+    
+    <string name="search">搜索</string>
+    <string name="search_button_desc">搜索按钮</string>
 
 </resources>

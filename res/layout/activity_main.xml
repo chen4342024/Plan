@@ -33,7 +33,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
-
+			 <com.cc.view.MyRadiobutton
+                android:id="@+id/radio_button_memo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
             <com.cc.view.MyRadiobutton
                 android:id="@+id/radio_button3"
                 android:layout_width="match_parent"

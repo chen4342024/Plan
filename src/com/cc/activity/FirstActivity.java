@@ -3,6 +3,7 @@ package com.cc.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class FirstActivity extends Activity implements OnClickListener {
 
   @Override
   public void onClick(View view) {
+	Log.i("test", "FirstActivity Click");
     switch (view.getId()) {
       case R.id.add_daily_plan:
         Intent addDailyPlanIntent = new Intent(this,AddDailyPlanAcitvity.class);

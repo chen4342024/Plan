@@ -2,8 +2,14 @@ package com.cc.db;
 
 import java.util.Date;
 
+/**
+ * 备忘录
+ * @author Administrator
+ *
+ */
 public class Memorandum {
   private int id;
+  private String title; //标题
   private String content;//内容 
   private int importance;//重要程度
   private Date initTime;//设置时间
@@ -11,7 +17,9 @@ public class Memorandum {
   private boolean isFinish;//是否完成
   
   public static final String ID = "id";
+  public static final String TITLE="TITLE";
   public static final String CONTENT = "content";
+  public static final String IMPORTANCE="importance";
   public static final String INIT_TIME = "initTime";
   public static final String REMIND_TIME = "remindTime";
   public static final String IS_FINISH = "isFinish";
@@ -52,6 +60,12 @@ public class Memorandum {
   public void setFinish(boolean isFinish) {
     this.isFinish = isFinish;
   }
+public String getTitle() {
+	return title;
+}
+public void setTitle(String title) {
+	this.title = title;
+}
   
   
 }

@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.cc.activity.FirstActivity"></activity>
+        <activity android:name="com.cc.memorandum.activity.MemoListActivity"></activity>
         <activity
             android:name="com.cc.activity.MainActivity"
             android:label="@string/app_name" >
