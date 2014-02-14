@@ -46,9 +46,11 @@ public class DBHelper extends SQLiteOpenHelper {
       "create table " + Memorandum.TABLE_NAME
       + " ( " 
       + Memorandum.ID + " INTEGER PRIMARY KEY,"
+      + Memorandum.TITLE +" varchar(40),"
+      + Memorandum.IMPORTANCE + " INTEGER,"
+      + Memorandum.CONTENT + " varchar(500)," 
       + Memorandum.INIT_TIME + " varchar(20),"
       + Memorandum.REMIND_TIME + " varchar(20),"
-      + Memorandum.CONTENT + " varchar(500)," 
       + Memorandum.IS_FINISH + " INTEGER" 
       + ")";
   
