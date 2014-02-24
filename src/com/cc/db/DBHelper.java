@@ -1,11 +1,11 @@
 package com.cc.db;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 public class DBHelper extends SQLiteOpenHelper {
   private static int Version = 1;
@@ -88,4 +88,13 @@ public class DBHelper extends SQLiteOpenHelper {
     Log.i("dbHelper", "更新数据库");
   }
 
+  public int lastInsert(SQLiteDatabase db,String tableName){
+	  int id = -1;
+	  if(db!=null && db.isOpen()){
+		  Cursor cursor = db.rawQuery("select last_insert_rowid() from "+tableName,null);
+		    cursor.moveToFirst();
+		    id = cursor.getInt(0);
+	  }
+	  return id;
+  }
 }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top|center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标题：" />
+
+        <EditText
+            android:id="@+id/titleEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间：" />
+
+        <TextView
+            android:id="@+id/setTimeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/setTimeBut"
+            android:layout_width="130px"
+            android:layout_height="40px"
+            android:text="设置" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内容：" />
+
+        <EditText
+            android:id="@+id/contentEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:inputType="textMultiLine" />
+
+        <requestFocus />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/okBut"
+            android:layout_width="130px"
+            android:layout_height="40px"
+            android:layout_margin="10px"
+            android:text="保存" />
+
+        <Button
+            android:id="@+id/cancelBut"
+            android:layout_width="130px"
+            android:layout_height="40px"
+            android:layout_margin="10px"
+            android:text="取消" />
+    </LinearLayout>
+
+</LinearLayout>

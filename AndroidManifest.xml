@@ -38,6 +38,10 @@
 				  android:label="@string/app_name"
 				  android:theme="@android:style/Theme.Dialog" 	
 		/>
+        <activity android:name="com.cc.memorandum.activity.AddMemorandumActivity" >
+        </activity>
+        <activity android:name="com.cc.memorandum.activity.ShowMemorandumActivity" >
+        </activity>
         <receiver android:name="com.cc.alarm.AlarmReceiver" android:enabled="true" />
         <service android:name="com.clj.service.PlanService"></service>
     </application>

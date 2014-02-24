@@ -10,6 +10,7 @@ import android.util.Log;
 public class DateService {
   public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm";
   public static final String TODAY_FORMAT = "yyyy-MM-dd";
+  public static final String DATE_FORMAT_TWO ="yyyy/MM/dd HH:mm";
 
   private static DateService dateService;
 
@@ -52,9 +53,14 @@ public class DateService {
     return strDate;
   }
   
-  public Date parse(String dateString, String pattern) throws ParseException {
+  public Date parse(String dateString, String pattern) {
     DateFormat df = new SimpleDateFormat(pattern);
-    return df.parse(dateString);
+    try {
+        return df.parse(dateString);
+      } catch (ParseException e) {
+        Log.e("error","ParseException--->"+e.getMessage());
+        return new Date();
+      }
   }
   
   public Date parseByDefaultPattern(String dateString) {

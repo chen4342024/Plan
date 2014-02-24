@@ -11,7 +11,7 @@ public class Memorandum {
   private int id;
   private String title; //标题
   private String content;//内容 
-  private int importance;//重要程度
+  private Integer importance;//重要程度
   private Date initTime;//设置时间
   private Date remindTime;//提醒时间
   private boolean isFinish;//是否完成
@@ -36,10 +36,10 @@ public class Memorandum {
   public void setContent(String content) {
     this.content = content;
   }
-  public int getImportance() {
+  public Integer getImportance() {
     return importance;
   }
-  public void setImportance(int importance) {
+  public void setImportance(Integer importance) {
     this.importance = importance;
   }
   public Date getInitTime() {
