@@ -12,5 +12,8 @@
     
     <string name="search">搜索</string>
     <string name="search_button_desc">搜索按钮</string>
-
+    
+    <string name="title_1">标题:</string>
+	<string name="content_1">内容:</string>
+	<string name="time_1">时间：</string>
 </resources>

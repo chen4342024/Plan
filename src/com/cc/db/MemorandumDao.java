@@ -25,6 +25,15 @@ public class MemorandumDao {
 		return list;
 	}
 	
+	public Memorandum findById(Context context,int id){
+		DBHelper dbHelper = new DBHelper(context);
+		SQLiteDatabase db = dbHelper.getReadableDatabase();
+		Cursor cursor = db.query(Memorandum.TABLE_NAME, null, Memorandum.ID+" = ?", new String[]{id+""},null, null, null);
+		while (cursor.moveToNext()) {
+			return cursorToMemorandum(cursor);
+		}
+		return null;
+	}
 	public Memorandum addMemorandum(Context context,Memorandum memo){
 		ContentValues values = MemorandumToContentValues(memo);
 		DBHelper dbHelper = new DBHelper(context);
