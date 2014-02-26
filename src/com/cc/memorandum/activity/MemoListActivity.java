@@ -70,7 +70,7 @@ public class MemoListActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				String selection = Memorandum.TITLE+" like ? or "+Memorandum.CONTENT+" like ? ";
+				String selection = Memorandum.TITLE+" like '%'||?||'%' or "+Memorandum.CONTENT+" like '%'||?||'%' ";
 				String searchStr = searchEdit.getText().toString();
 				String[] selectionValues ={searchStr,searchStr};
 				String orderby = Memorandum.INIT_TIME+" desc";
